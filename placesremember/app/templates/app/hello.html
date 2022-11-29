@@ -4,9 +4,13 @@
 
 {% block content %}
 <a href="/login/vk-oauth2"><img src="{% static 'lvk.png' %}" style="width: 35px" title="VK Login"></a>
-<a href="{% url 'social:begin' 'google-oauth2' %}"><img src="/static/lgoogle.png" style="width: 35px" class="avatar-3" data-toggle="tooltip" title="Google Login"></a>
+<a href="{% url 'social:begin' 'google-oauth2' %}"><img src="/static/lgoogle.png" style="width: 35px" class="avatar-3"
+        data-toggle="tooltip" title="Google Login"></a>
 
 <a href="{% url 'logout' %}">LogOut</a>
-{% if user.is_authenticated %}123{% endif %}
+{% if user.is_authenticated %}
+Logged in
+{% else %}
+Logged out
+{% endif %}
 {% endblock content %}
-    
