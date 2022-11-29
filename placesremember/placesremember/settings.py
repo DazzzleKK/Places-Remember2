@@ -12,7 +12,12 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-from .keys import VK_OAUTH2_KEY, VK_OAUTH2_SECRET
+from .keys import (
+    VK_OAUTH2_KEY,
+    VK_OAUTH2_SECRET,
+    GOOGLE_CLIENT_ID,
+    GOOGLE_CLIENT_SECRET,
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -131,7 +136,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTHENTICATION_BACKENDS = (
     # "social_core.backends.open_id.OpenIdAuth",
     # "social_core.backends.google.GoogleOpenId",
-    # "social_core.backends.google.GoogleOAuth2",
+    "social_core.backends.google.GoogleOAuth2",
     # "social_core.backends.google.GoogleOAuth",
     "social_core.backends.vk.VKOAuth2",
     "django.contrib.auth.backends.ModelBackend",
@@ -139,5 +144,8 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIAL_AUTH_VK_OAUTH2_KEY = VK_OAUTH2_KEY
 SOCIAL_AUTH_VK_OAUTH2_SECRET = VK_OAUTH2_SECRET
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = GOOGLE_CLIENT_ID
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = GOOGLE_CLIENT_SECRET
 
 LOGIN_REDIRECT_URL = "/"
