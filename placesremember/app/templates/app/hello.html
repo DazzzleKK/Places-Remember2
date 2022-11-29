@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block content %}
-    hello
+<a href="/login/vk-oauth2"><img src="{% static 'lvk.png' %}" style="width: 35px" title="VK Login"></a>
+<a href="/disconnect/vk-oauth2"><img src="{% static 'lvk.png' %}" style="width: 35px" title="VK Login"></a>
+<a href="{% url 'logout' %}">LogOut</a>
 {% endblock content %}
     

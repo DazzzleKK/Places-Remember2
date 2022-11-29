@@ -21,5 +21,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("places/", include("app.urls")),
     path("", RedirectView.as_view(url="/places/")),
-    path("", include("social_django.urls", namespace="social")),
+    path("", include("social_django.urls")),
 ]
