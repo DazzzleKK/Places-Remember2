@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-t)+r2b%xttd**18)p&es*)n6o+wp)(+x(+&syrp93o!h+fxuh8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["192.168.0.14", "127.0.0.1", "kirillk.pythonanywhere.com"]
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "app.apps.AppConfig",
+    "social_django",
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = "placesremember.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'templates')],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -64,6 +65,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "social_django.context_processors.backends",
             ],
         },
     },
@@ -123,3 +125,13 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+AUTHENTICATION_BACKENDS = (
+    "social_core.backends.open_id.OpenIdAuth",
+    "social_core.backends.google.GoogleOpenId",
+    "social_core.backends.google.GoogleOAuth2",
+    "social_core.backends.google.GoogleOAuth",
+    "social_core.backends.vk.VKOAuth2",
+    "django.contrib.auth.backends.ModelBackend",
+)
