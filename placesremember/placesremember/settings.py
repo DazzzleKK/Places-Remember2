@@ -17,6 +17,7 @@ from .keys import (
     VK_OAUTH2_SECRET,
     GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET,
+    LOCAL_POSTGRESQL_PASSWORD,
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -85,14 +86,12 @@ WSGI_APPLICATION = "placesremember.wsgi.application"
 
 DATABASES = {
     "default": {
-        # "ENGINE": "django.db.backends.sqlite3",
-        # "NAME": BASE_DIR / "db.sqlite3",
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "railway",
+        "NAME": "postgres",
         "USER": "postgres",
-        "PASSWORD": "A6v1RL6gKR73qU5WQiWh",
-        "HOST": "containers-us-west-77.railway.app",
-        "PORT": "6660",
+        "PASSWORD": LOCAL_POSTGRESQL_PASSWORD,
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
     }
 }
 
