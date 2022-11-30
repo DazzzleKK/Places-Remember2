@@ -9,8 +9,8 @@
 <a href="{% url 'logout' %}">LogOut</a>
 {% else %}
 <a href="/login/vk-oauth2"><img src="{% static 'lvk.png' %}" style="width: 35px" title="VK Login"></a>
-<a href="{% url 'social:begin' 'google-oauth2' %}"><img src="/static/lgoogle.png" style="width: 35px" class="avatar-3"
-        data-toggle="tooltip" title="Google Login"></a>
+<a href="{% url 'social:begin' 'google-oauth2' %}"><img src="{% static 'lgoogle.png' %}" style="width: 35px"
+                class="avatar-3" data-toggle="tooltip" title="Google Login"></a>
 
 Logged out
 {% endif %}

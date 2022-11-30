@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import hello, Logout
+from .views import Logout, Index
 
 urlpatterns = [
-    path("", hello, name="hello"),
+    path("", Index.as_view(), name="hello"),
     path("logout/", Logout.as_view(), name="logout"),
 ]

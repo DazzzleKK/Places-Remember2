@@ -1,12 +1,12 @@
-from django.shortcuts import render
 from django.contrib.auth.views import LogoutView
+from django.views.generic.base import TemplateView
 
 # Create your views here.
 
 
-def hello(request):
-    return render(request, "app/hello.html")
+class Index(TemplateView):
+    template_name = "app/index.html"
 
 
 class Logout(LogoutView):
-    template_name = "app/hello.html"
+    template_name = "app/index.html"
