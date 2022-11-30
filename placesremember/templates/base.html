@@ -18,15 +18,17 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="feature-box">
-                        {% block content %}
-                        {% endblock content %}
+                        {% block login %}
+                        {% include 'app/login.html' %}
+                        {% endblock login %}
                     </div>
                 </div>
+
                 <div class="col-md-8">
                     <div class="feature-box">
-                        <h1>Feature Box Content</h1>
-                        <p>Some text Some text Some text Some text Some text Some text Some text Some text Some text
-                            Some text Some text Some text Some text Some text Some text </p>
+                        {% block content %}
+                        <div class="display-5">Здесь будут ваши воспоминания</div>
+                        {% endblock content %}
                     </div>
                 </div>
             </div>
