@@ -4,12 +4,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-# class Places(models.Model):
-#     name = models.CharField(max_length=150)
-#     author = models.ForeignKey(
-#         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True
-#     )
-#     # place_location = models.PointField()
+class Places(models.Model):
+    name = models.CharField(max_length=150)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    latitude = models.DecimalField(max_digits=9, decimal_places=6)
+    longitude = models.DecimalField(max_digits=9, decimal_places=6)
 
 
 class Profile(models.Model):
