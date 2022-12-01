@@ -9,9 +9,7 @@ class Places(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True
     )
-    desctiption = models.CharField(verbose_name="Описание", max_length=300, null=True)
-    latitude = models.DecimalField(max_digits=9, decimal_places=6)
-    longitude = models.DecimalField(max_digits=9, decimal_places=6)
+    description = models.CharField(verbose_name="Описание", max_length=300, null=True)
     location = PointField(verbose_name="Место", null=True)
 
     def __str__(self):

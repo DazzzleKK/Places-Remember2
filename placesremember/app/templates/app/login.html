@@ -4,6 +4,7 @@
 <p class="fs-4"><img src="{{user.profile.avatar}}"> {{user.first_name}}</p>
 <a class="btn btn-danger" href="{% url 'logout' %}" role="button">Выйти</a>
 <a class="btn btn-primary" href="{% url 'add' %}" role="button">Новое воспоминание</a>
+<a class="btn btn-primary" href="{% url 'list' %}" role="button">К списку</a>
 {% else %}
 <div class="display-6">Войти с помощью</div>
 <a href="/login/vk-oauth2"><img src="{% static 'lvk.png' %}" style="width: 35px" title="VK Login"></a>

@@ -6,12 +6,12 @@ from mapwidgets.widgets import GooglePointFieldWidget
 class NewPlaceForm(forms.ModelForm):
     class Meta:
         model = Places
-        fields = ["name", "desctiption", "location"]
+        fields = ["name", "description", "location"]
         widgets = {
             "name": forms.TextInput(
                 attrs={"class": "form-control", "placeholder": "Новое место"}
             ),
-            "desctiption": forms.Textarea(
+            "description": forms.Textarea(
                 attrs={
                     "class": "form-control",
                     "rows": 3,
