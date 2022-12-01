@@ -44,8 +44,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.gis",
     "app.apps.AppConfig",
     "social_django",
+    "mapwidgets",
 ]
 
 MIDDLEWARE = [
@@ -85,7 +87,8 @@ WSGI_APPLICATION = "placesremember.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
+        # "ENGINE": "django.db.backends.sqlite3",
+        "ENGINE": "django.contrib.gis.db.backends.spatialite",
         "NAME": BASE_DIR / "db.sqlite3",
         # "ENGINE": "django.db.backends.postgresql",
         # "NAME": "railway",
@@ -96,6 +99,11 @@ DATABASES = {
     }
 }
 
+GDAL_LIBRARY_PATH = (
+    r"C:\Users\krivi\pifon\django-sites"
+    r"\Places Remember\Places-Remember\venv\Lib"
+    r"\site-packages\osgeo\gdal304"
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

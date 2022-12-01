@@ -5,4 +5,4 @@ from .models import Places
 class NewPlaceForm(forms.ModelForm):
     class Meta:
         model = Places
-        fields = ["name", "latitude", "longitude"]
+        fields = ["name", "latitude", "longitude", "location"]

@@ -1,5 +1,12 @@
-from django.contrib import admin
+# from django.contrib import admin
 from .models import Profile, Places
+from django.contrib.gis import admin
 
 admin.site.register(Profile)
-admin.site.register(Places)
+
+
+@admin.register(Places)
+class PlacesAdmin(admin.OSMGeoAdmin):
+    """Places admin."""
+
+    list_display = ("name", "location")
