@@ -3,8 +3,14 @@
 
 {% block content %}
 
+{% if places %}
 {% for place in places %}
-{{place}}
+<p>{{place}}</p>
 {% endfor %}
+{% else %}
+<div class="display-5">У вас нет ни одного воспоминания</div>
+{% endif %}
+    
+
 
 {% endblock content %}
