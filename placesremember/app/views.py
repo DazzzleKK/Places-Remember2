@@ -1,8 +1,8 @@
 from django.contrib.auth.views import LogoutView
 from django.views.generic.base import TemplateView
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from .models import Places
-from .forms import NewPlaceForm
+from .forms import NewPlaceForm, PlacesDetailForm
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -37,3 +37,8 @@ class PlacesCreateView(CreateView):
         obj = form.save(commit=False)
         obj.user = self.request.user
         return super(PlacesCreateView, self).form_valid(form)
+
+
+class PlacesUpdateView(UpdateView):
+    model = Places
+    form_class = PlacesDetailForm
