@@ -7,6 +7,4 @@ admin.site.register(Profile)
 
 @admin.register(Places)
 class PlacesAdmin(admin.OSMGeoAdmin):
-    """Places admin."""
-
     list_display = ("name", "location")

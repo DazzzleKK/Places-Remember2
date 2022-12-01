@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.gis.db.models import PointField
+from django.urls import reverse
 
 
 class Places(models.Model):
@@ -14,6 +15,9 @@ class Places(models.Model):
 
     def __str__(self):
         return f"Место :{self.name} Автор: {self.user}"
+
+    def get_absolute_url(self):
+        return reverse("view_place", kwargs={"pk": self.pk})
 
 
 class Profile(models.Model):
