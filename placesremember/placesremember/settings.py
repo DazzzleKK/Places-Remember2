@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "app.apps.AppConfig",
     "social_django",
     "mapwidgets",
+    "jquery",
 ]
 
 MIDDLEWARE = [
@@ -140,6 +141,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, r"placesremember\static"),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
