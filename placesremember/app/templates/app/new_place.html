@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
+{% if request.user.is_authenticated %}
 <form action="" method="POST">
     {% csrf_token %}
     {{ form.media }}
     {{ form.as_p }}
     <button type="submit" class='btn btn-primary'>Добавить воспоминание</button>
 </form>
+{% endif %}
 {% endblock content %}
