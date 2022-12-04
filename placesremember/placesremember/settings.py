@@ -17,6 +17,7 @@ from .keys import (
     VK_OAUTH2_SECRET,
     GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET,
+    DJANGO_SECRET_KEY,
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-t)+r2b%xttd**18)p&es*)n6o+wp)(+x(+&syrp93o!h+fxuh8"
+SECRET_KEY = DJANGO_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -100,11 +101,13 @@ DATABASES = {
     }
 }
 
-GDAL_LIBRARY_PATH = (
-    r"C:\Users\krivi\pifon\django-sites"
-    r"\Places Remember\Places-Remember\venv\Lib"
-    r"\site-packages\osgeo\gdal304"
-)
+# Local developing/testing path for maps
+
+# GDAL_LIBRARY_PATH = (
+#     r"C:\Users\krivi\pifon\django-sites"
+#     r"\Places Remember\Places-Remember\venv\Lib"
+#     r"\site-packages\osgeo\gdal304"
+# )
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
