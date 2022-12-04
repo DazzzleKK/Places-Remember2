@@ -7,8 +7,10 @@ cryptography==38.0.4
 defusedxml==0.7.1
 distlib==0.3.6
 Django==4.1.3
+django-jquery==3.1.0
 django-map-widgets==0.4.0
 filelock==3.8.0
+GDAL @ file:///C:/Users/krivi/Downloads/GDAL-3.4.3-cp311-cp311-win_amd64.whl
 identify==2.5.9
 idna==3.4
 nodeenv==1.7.0
