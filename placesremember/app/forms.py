@@ -27,14 +27,12 @@ class PlacesDetailForm(forms.ModelForm):
         model = Places
         fields = ["name", "description", "location"]
         widgets = {
-            "name": forms.TextInput(
-                attrs={"class": "form-control", "placeholder": "Новое место"}
-            ),
+            "name": forms.TextInput(attrs={"class": "form-control", "disabled": None}),
             "description": forms.Textarea(
                 attrs={
                     "class": "form-control",
                     "rows": 3,
-                    "placeholder": "(необязательно)",
+                    "disabled": None,
                 }
             ),
             "location": OSMWidget,

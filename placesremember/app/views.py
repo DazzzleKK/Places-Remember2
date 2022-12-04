@@ -1,15 +1,22 @@
 from django.contrib.auth.views import LogoutView
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView, CreateView, UpdateView
-from .models import Places
-from .forms import NewPlaceForm, PlacesDetailForm
 from django.urls import reverse_lazy
+from django.shortcuts import redirect
+
+from .forms import NewPlaceForm, PlacesDetailForm
+from .models import Places
 
 # Create your views here.
 
 
 class Index(TemplateView):
     template_name = "app/index.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect("list")
+        return super().dispatch(request, *args, **kwargs)
 
 
 class Logout(LogoutView):
