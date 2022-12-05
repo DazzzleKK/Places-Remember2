@@ -18,7 +18,7 @@ class NewPlaceForm(forms.ModelForm):
                     "placeholder": "(необязательно)",
                 }
             ),
-            "location": OSMWidget,
+            "location": OSMWidget(attrs={"map_width": 350,}),
         }
 
 
@@ -35,5 +35,5 @@ class PlacesDetailForm(forms.ModelForm):
                     "disabled": None,
                 }
             ),
-            "location": OSMWidget,
+            "location": OSMWidget(attrs={"map_width": 350,}),
         }
